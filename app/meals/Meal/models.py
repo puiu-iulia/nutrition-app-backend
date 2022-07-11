@@ -15,5 +15,5 @@ class Meal(models.Model):
         on_delete=models.CASCADE,
     )
 
-    def __str__(self):
-        return self.meal_time
+    # def __str__(self):
+    #     return self.id

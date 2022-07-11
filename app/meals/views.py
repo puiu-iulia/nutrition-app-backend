@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from .MealTime.views import MealTimeViewSet
+from .Meal.views import MealViewSet
+from .MealPlan.views import MealPlanViewSet
 
-# Create your views here.
+__all__ = [
+    'MealTimeViewSet',
+    'MealViewSet',
+    'MealPlanViewSet',
+]
