@@ -20,12 +20,12 @@ class Recipe(models.Model):
         on_delete=models.CASCADE,
     )
     title = models.CharField(max_length=255)
-    description = models.TextField(blank=True)
-    time_minutes = models.IntegerField()
-    link = models.CharField(max_length=255, blank=True)
-    tags = models.ManyToManyField('Tag')
-    ingredients = models.ManyToManyField('Ingredient')
-    steps = models.ManyToManyField('Step')
+    description = models.CharField(max_length=255, blank=True, null=True),
+    time_minutes = models.IntegerField(blank=True, null=True)
+    link = models.CharField(max_length=90, blank=True, null=True)
+    tags = models.ManyToManyField('Tag', blank=True)
+    ingredients = models.ManyToManyField('Ingredient', blank=True)
+    steps = models.ManyToManyField('Step', blank=True)
     image = models.ImageField(null=True, upload_to=recipe_image_file_path)
 
     def __str__(self):

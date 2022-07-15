@@ -23,10 +23,7 @@ class RecipeDetailSerializer(RecipeSerializer):
     """Serializer for recipe detail view."""
 
     class Meta(RecipeSerializer.Meta):
-        fields = [
-            'id', 'title', 'time_minutes', 'link', 'tags',
-            'ingredients', 'steps', "description"
-        ]
+        fields = RecipeSerializer.Meta.fields
 
     def _get_or_create_tags(self, tags, recipe):
         """Handle getting or creating tags as needed."""
