@@ -13,7 +13,7 @@ class MealSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Meal
-        fields = ('id', 'recipes', 'meal_time')
+        fields = ('id')
         read_only_fields = ('id',)
 
 

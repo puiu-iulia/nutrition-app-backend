@@ -14,7 +14,7 @@ class MealPlanViewSet(viewsets.GenericViewSet,
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
     queryset = MealPlan.objects.all()
-    serializer_class = MealPlanDetailsSerializer
+    serializer_class = MealPlanSerializer
     current_date = datetime.today().date()
 
     def get_queryset(self):
@@ -25,9 +25,9 @@ class MealPlanViewSet(viewsets.GenericViewSet,
         """Create a new ingredient"""
         serializer.save(user=self.request.user)
 
-    # def get_serializer_class(self):
-    #     """Return the serializer class for request."""
-    #     if self.action == 'retrieve':
-    #         return MealPlanDetailsSerializer
+    def get_serializer_class(self):
+        """Return the serializer class for request."""
+        if self.action == 'list':
+            return MealPlanDetailsSerializer
 
-    #     return self.serializer_class
+        return self.serializer_class

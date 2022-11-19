@@ -7,6 +7,10 @@
 docker-compose build
 docker-compose up
 
+# Make migrations
+
+docker-compose run app sh -c "python manage.py makemigrations {module}"
+
 # Migrate the db
 
 docker-compose run app sh -c "python manage.py migrate"

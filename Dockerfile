@@ -16,5 +16,10 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app/ /app
 
+RUN mkdir -p /documents/recipe
+RUN mkdir -p /static
+
 RUN adduser -D user
+RUN chown -R user:user /documents/
+RUN chmod -R 755 /documents
 USER user

@@ -4,11 +4,11 @@ from rest_framework.routers import DefaultRouter
 from .views import MealTimeViewSet, MealViewSet, MealPlanViewSet
 
 router = DefaultRouter()
-router.register('meal-times', MealTimeViewSet)
-router.register('meals', MealViewSet)
-router.register('meal-plan', MealPlanViewSet)
+router.register('/meal-times', MealTimeViewSet)
+router.register('/meals', MealViewSet)
+router.register('/mealplaning', MealPlanViewSet)
 
-app_name = 'meals'
+app_name = 'mealplanning'
 
 urlpatterns = [
     path('', include(router.urls))
